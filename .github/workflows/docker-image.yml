@@ -49,10 +49,10 @@ jobs:
 
       - name: Stop and remove old container
         run: |
-          if [ "$(docker ps -q -f name=counter-app)" ]; then
-            docker stop counter-app
-            docker rm counter-app
+          if [ "$(docker ps -q -f name=latest-counter-app)" ]; then
+            docker stop latest-counter-app
+            docker rm latest-counter-app
           fi
 
       - name: Run new container
-        run: docker run -d --name counter-app -p 3000:3000 ghcr.io/zukazine/mycicd/counter-app:latest
+        run: docker run -d --name latest-counter-app -p 3000:3000 ghcr.io/zukazine/mycicd/counter-app:latest
