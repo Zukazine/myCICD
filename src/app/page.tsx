@@ -14,7 +14,7 @@ export default function Home() {
         </Link>
       </div>
       <p className="text-black text-xs absolute bottom-0 right-0 pb-4 pr-4">
-        v0.3
+        v0.4
       </p>
     </>
   );
