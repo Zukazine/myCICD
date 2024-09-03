@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Counter from '../pages/counter';
+import Counter from '../src/app/counter/page';
 import '@testing-library/jest-dom';
 import { useRouter } from 'next/router';
 
