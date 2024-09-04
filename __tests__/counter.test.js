@@ -16,21 +16,28 @@ describe('Counter', () => {
 
   it('renders the Counter component', () => {
     render(<Counter />);
-    expect(screen.getByText("Click Count: 0")).toBeInTheDocument();
+    const countDisplay = screen.getByText(/Click Count:/i).closest('div');
+    expect(countDisplay).toHaveTextContent("Click Count: 0");
   });
 
   it('increments the count when "Plus Me!" button is clicked', () => {
     render(<Counter />);
     const plusButton = screen.getByText('Plus Me!');
     fireEvent.click(plusButton);
-    expect(screen.getByText("Click Count: 1")).toBeInTheDocument();
+    expect(screen.getByText((content, element) => {
+      return element.textContent === 'Click Count: 1';
+    })).toBeInTheDocument();
+  
   });
 
   it('decrements the count when "Substact Me!" button is clicked', () => {
     render(<Counter />);
-    const subtractButton = screen.getByText('Substact Me!');
+    const subtractButton = screen.getByText('Subtract Me!');
     fireEvent.click(subtractButton);
-    expect(screen.getByText("Click Count: -1")).toBeInTheDocument();
+    expect(screen.getByText((content, element) => {
+      return element.textContent === 'Click Count: -1';
+    })).toBeInTheDocument();
+  
   });
 
   it('renders a link back to the Home page', () => {

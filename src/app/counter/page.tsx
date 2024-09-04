@@ -25,7 +25,7 @@ const Counter = () => {
 					<button 
 						onClick={() => setCount(count - 1)}
 						className='border-2 border-white py-2 px-8 rounded-2xl hover:border-red-300 hover:bg-red-300 hover:text-black'
-					>Substact Me!</button>
+					>Subtract Me!</button>
 				</div>
 			</div>
 		</div>
