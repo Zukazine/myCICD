@@ -27,7 +27,7 @@ describe('Home', () => {
 
   it('renders the version text', () => {
     render(<Home />)
-    expect(screen.getByText('v0.4')).toBeInTheDocument()
+    expect(screen.getByText('v0.5')).toBeInTheDocument()
   })
 
   it('renders the link with correct classes', () => {
