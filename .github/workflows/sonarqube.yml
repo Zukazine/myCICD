@@ -1,5 +1,5 @@
 ---
-name: SonarQube analysis
+name: Static Analysis - Vulnreabilities Detection
 
 on:
   push:

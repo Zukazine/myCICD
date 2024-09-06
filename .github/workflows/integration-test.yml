@@ -1,5 +1,5 @@
 ---
-name: Cypress Tests
+name: Integration Testing
 
 on: push
 
