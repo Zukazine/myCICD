@@ -28,13 +28,13 @@ jobs:
       run: |
         npm install
 
-    - name: Run Tests
+    - name: Run Jest Tests with Coverage
       run: |
-        npm test
+        npm test --coverage
 
     - name: Upload Test Results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: |
