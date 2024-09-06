@@ -32,6 +32,18 @@ jobs:
       - name: Run Jest tests with coverage
         run: npm test -- --coverage
 
+      - name: Build Next.js app
+        run: npm run build 
+
+      - name: Start Next.js app
+        run: npm run start &
+        env:
+          PORT: 5000,
+          NODE_ENV: test
+
+      - name: Wait for Next.js to be available
+        run: npx wait-on http://localhost:5000
+
       - name: Run Cypress tests with coverage
         run: npm run cy:run
 
